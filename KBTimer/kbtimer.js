@@ -306,6 +306,8 @@ function initialize() {
 		//  once a second
 		var myVar = setInterval(function() {updateCounter();}, 1000);
 
+		settingsOK();
+
 }
 
 
@@ -363,8 +365,10 @@ function blurAll() {
 
 //Store settings when the user clicks okay
 function settingsOK(evt) {
-		evt.stopPropagation();
-		evt.preventDefault();
+		if(typeof evt === 'object') {
+				evt.stopPropagation();
+				evt.preventDefault();
+		}
 
 		blurAll();
 
